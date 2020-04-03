@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.1.1",
+    "dotenv": "^8.2.0",
+    "ascii-table": "^0.0.9",
+    "fs": "^0.0.2"
   },
   "engines": {
-    "node": "12.x" 
+    "node": "12.x"
   },
   "repository": {
     "url": "https://glitch.com/edit/#!/hello-express"
