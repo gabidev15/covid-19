@@ -12,8 +12,20 @@ module.exports = {
     }
     
     if(!message.guild.me.hasPermission("BAN_MEMBERS")) {
-      return message.channel.send(`**${message.author.username}**, I am do no`)
+      return message.channel.send(`**${message.author.username}**, I am do not have perms to ban someone`)
     }
+    
+    const target = message.mentions.members.first();
+    
+    if(!target) {
+      return message.channel.send(`**${message.author.username}**, Please mention the person who you want to ban.`)
+    }
+    
+    if(target.id === message.author.id) {
+      return message.channel.send(`**${message.author.username}**, You can not ban yourself!`)
+    }
+    
+    if(target.id === )
     
     
     
