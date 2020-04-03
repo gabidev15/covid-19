@@ -1,34 +1,17 @@
-// server.js
-// where your node app starts
+const { token, prefix } = require("./config.json")
 
-// we've started you off with Express (https://expressjs.com/)
-// but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-const express = require("express");
-const app = express();
+const discord = require("discord.js") //Gonna use Discord.js Module xD
+const client = new discord.Client();
 
-// our default array of dreams
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
+client.on("ready", () => { //When bot is ready
+  console.log("I am Reday to Go")
+  client.user.setActivity("I am Devil") //It will set status :)
+})
 
-// make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
-app.use(express.static("public"));
+client.on("message", message => {
+ if(message.content === `${prefix}ping`) {
+   return message.channel.send(`Pong ${client.ws.ping}`)
+ }
+})
 
-// https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
-});
-
-// send the default array of dreams to the webpage
-app.get("/dreams", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
-});
-
-// listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log("Your app is listening on port " + listener.address().port);
-});
+client.login(token)
