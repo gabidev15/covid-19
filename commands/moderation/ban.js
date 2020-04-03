@@ -25,7 +25,16 @@ module.exports = {
       return message.channel.send(`**${message.author.username}**, You can not ban yourself!`)
     }
     
-    if(target.id === )
+    if(target.id === message.user.id) {
+      return message.channel.send(`**${message.author.username}**, You can not ban me :(`)
+    }
+    
+   if(!args[1]) {
+     return message.channel.send(`**${message.author.username}**, Please Give Reason To ban Member`)
+   }
+    
+    let embed = new discord.MessageEmbed()
+    .setTitle()
     
     
     
