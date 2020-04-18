@@ -11,15 +11,23 @@ module.exports = {
   run: async (client, message, args) => {
     
     
- if(!args.length === "all") {
+ if(args.join(" ") === "all") {     
    let corona = await track.all()
    
    let embed = new Discord.MessageEmbed()
    .setTitle("Global Cases")
    .setColor("#ff2050")
-   .addField(corona)
+   .addField("Total Cases", corona.cases, true)
+   .addField("Todays Cases", corona.todayCases, true)
+   .addField("Total Deaths", corona.deaths, true)
+   .addField("Today Deaths", corona.todayDeaths, true)
+   .addField("Total Recovered", corona.recovered, true)
+   .addField("Active Cases", corona.active, true)
+   
+   return message.channel.send(embed)
    
  }
+    
     
     
     
