@@ -15,7 +15,8 @@
     "dotenv": "^8.2.0",
     "ascii-table": "^0.0.9",
     "fs": "^0.0.2",
-    "imdb-api": "^4.0.3"
+    "imdb-api": "^4.0.3",
+    "novelcovid": "^1.2.6"
   },
   "engines": {
     "node": "12.x"
