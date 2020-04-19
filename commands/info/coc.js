@@ -1,8 +1,7 @@
 const clashApi = require('clash-of-clans-api');
-
+const { MessageEmbed } = require("discord.js")
 let clienx = clashApi({
-  token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImE0ZGFmMjc0LTRlZWMtNDkwMC04NGFlLTEwYmE0N2VjMmRhYSIsImlhdCI6MTU4NzI4NTY2OCwic3ViIjoiZGV2ZWxvcGVyL2I2OWMyMWVkLTM2ZDQtZDg0Mi1kMDMxLTc5MjNlZDI1Njc2YSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjMuMjIwLjE2OS4xNTYiXSwidHlwZSI6ImNsaWVudCJ9XX0.WanAmI2ToRO2OurByvR4uJUyyvJLfxJeBX3PM52p3d1ckc9KlVd1Y4KKR7LhRogRxxjCNT-AGgMaekvo5UrJvg" 
-});
+  token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjhmZjVmMTEwLTdkYjktNGZkNC1iYmIyLTUxYTk5ZDk4M2E5NiIsImlhdCI6MTU4NzI4NjMzNiwic3ViIjoiZGV2ZWxvcGVyL2I2OWMyMWVkLTM2ZDQtZDg0Mi1kMDMxLTc5MjNlZDI1Njc2YSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjE1Ny40My4xMDUuODYiLCIzLjIyMC4xNjkuMTU2Il0sInR5cGUiOiJjbGllbnQifV19.DGmhhvFQzHExUokk7vsEHVVC34LayjtH1Ap7DLfmDZB6jqt8hcRXMMf0nLRlXHVdmfUL8xzrzkTlQ8Mo6a93aQ"});
 
 
 
@@ -14,13 +13,20 @@ module.exports = {
   run: async (client, message, args) => {
     message.channel.send(`Done`);
     
-   clienx
-  .clans()
-  .withWarFrequency('always')
-  .withMinMembers(25)
-  .fetch()
-  .then(response => console.log(response))
-  .catch(err => console.log(err))
+    
+ clienx
+  .clanByTag('#UPC2UQ')
+  .then(response => {
+let embed = new MessageEmbed()
+.setTitle(response.name)
+.set
+.setColor("#ff2050")
+
+message.channel.send(embed)
+   
+ })
+ 
+  .catch(err => console.log(err));
   }
   
 }
