@@ -11,7 +11,7 @@ module.exports = {
   description: "Get bot ping :/",
   usage: "ping",
   run: async (client, message, args) => {
-  //  message.channel.send(`Done`);
+ 
     
     if(!args.length) {
       return message.channel.send("Please provide Clan Tag")
