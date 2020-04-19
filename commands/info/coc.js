@@ -19,7 +19,9 @@ module.exports = {
   .then(response => {
 let embed = new MessageEmbed()
 .setTitle(response.name)
-.set
+.setThumbnail(response.badgeUrls.large)
+.setDescription(response.description)
+.addField("Clan Level", response.clanLevel)
 .setColor("#ff2050")
 
 message.channel.send(embed)
