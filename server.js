@@ -2,7 +2,7 @@ const { token, prefix } = require("./config.json")
 const { config } = require("dotenv");
 const discord = require("discord.js") //Gonna use Discord.js Module xD
 const client = new discord.Client({
-  disableEveryone: true
+  disableEveryone: true // what does this disable thing do?
 });
 
 client.commands = new discord.Collection();
