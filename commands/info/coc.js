@@ -11,11 +11,14 @@ module.exports = {
   description: "Get bot ping :/",
   usage: "ping",
   run: async (client, message, args) => {
-    message.channel.send(`Done`);
+  //  message.channel.send(`Done`);
     
-    
+    if(!args.length) {
+      return message.channel.send("Please provide Clan Tag")
+      
+    }
  clienx
-  .clanByTag('#UPC2UQ')
+  .clanByTag(args.join(" "))
   .then(response => {
 let embed = new MessageEmbed()
 .setTitle(response.name)
