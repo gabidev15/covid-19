@@ -16,9 +16,7 @@
     "ascii-table": "^0.0.9",
     "fs": "^0.0.2",
     "imdb-api": "^4.0.3",
-    "novelcovid": "^1.2.6",
-    "clash-of-clans-api": "^0.6.3",
-    "coc-api-nodejs": "^1.0.0"
+    "novelcovid": "^1.2.6"
   },
   "engines": {
     "node": "12.x"
