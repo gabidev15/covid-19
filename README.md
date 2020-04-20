@@ -7,6 +7,6 @@ Example:
 One country: **cov=corona Romania**
 All countries: **cov=corona all**
 ## Support
-[Discord Server](https://discord.gg/nhyfBCu)
-[Website](https://join4join.weebly.com)
+Discord Server: https://discord.gg/nhyfBCu
+Website: https://join4join.weebly.com
 Private: DEV Gabi#6253 (MUST ADD ME AS FRIEND TO DM ME)
